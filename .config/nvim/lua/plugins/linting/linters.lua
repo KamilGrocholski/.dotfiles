@@ -19,9 +19,9 @@ return {
   eslint = {
     name = "eslint_d",
     to_register_wrap = function()
-      return require("null-ls").register.require("null-ls").builtins.diagnostics.eslint_d.with({
-        filetypes = { "typescript", "javascript", "typescriptreact", "javascriptreact" },
-      })
+      return require("null-ls").register(require("null-ls").builtins.diagnostics.eslint_d.with({
+        filetypes = { "typescript", "javascript", "typescriptreact", "javascriptreact", "css", "scss" },
+      }))
     end,
   },
 }
