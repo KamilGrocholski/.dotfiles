@@ -18,8 +18,18 @@ alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 alias rl="source ~/.bashrc; echo '~/.bashrc reloaded.'"
 
+# nvim config
+alias cnvim="cd ~/.config/nvim"
+alias aliases="cd ~/.bash_aliases"
+alias functions="cd ~/.bash_functions"
+
 # directory navigation
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
+
+# some more ls aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'

@@ -14,10 +14,10 @@ return {
     end,
   },
   prettier = {
-    name = "prettierd",
+    name = "prettier",
     disabled = false,
     to_register_wrap = function()
-      return require("null-ls").builtins.formatting.prettierd.with({
+      return require("null-ls").builtins.formatting.prettier.with({
         filetypes = {
           "html",
           "css",
@@ -29,7 +29,19 @@ return {
           "javascript",
         },
         extra_args = {
-          require("util").config_finder({ ".prettierrc.json" }, default_config_dir),
+          "--config",
+          require("util").config_finder(
+            {
+              ".prettierrc.json",
+              ".prettierrc.js",
+              ".prettierrc.yml",
+              ".prettierrc.yaml",
+              ".prettierrc.cjs",
+              ".prettierrc.config.js",
+              ".prettierrc.toml",
+            },
+            default_config_dir
+          ),
         },
       })
     end,
