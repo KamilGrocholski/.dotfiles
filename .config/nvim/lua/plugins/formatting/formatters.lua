@@ -30,18 +30,18 @@ return {
         },
         extra_args = {
           "--config",
-          require("util").config_finder(
-            {
-              ".prettierrc.json",
-              ".prettierrc.js",
-              ".prettierrc.yml",
-              ".prettierrc.yaml",
-              ".prettierrc.cjs",
-              ".prettierrc.config.js",
-              ".prettierrc.toml",
-            },
-            default_config_dir
-          ),
+          require("util").config_finder({
+            ".prettierrc.json",
+            ".prettierrc.js",
+            ".prettierrc.yml",
+            ".prettierrc.yaml",
+            ".prettierrc.cjs",
+            ".prettierrc.config.js",
+            ".prettierrc.config.cjs",
+            ".prettierrc.toml",
+            "prettier.config.cjs",
+            "prettier.config.js",
+          }, default_config_dir),
         },
       })
     end,
