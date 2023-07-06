@@ -131,3 +131,5 @@ export FZF_DEFAULT_OPTS="
     --preview 'batcat --style=numbers --color=always --line-range :500 {}'"
 
 set -o vi
+
+export EDITOR="/usr/bin/nvim"
