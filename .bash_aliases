@@ -20,6 +20,7 @@ alias rl="source ~/.bashrc; echo '~/.bashrc reloaded.'"
 
 # nvim config
 alias cnvim="cd ~/.config/nvim"
+
 alias aliases="cd ~/.bash_aliases"
 alias functions="cd ~/.bash_functions"
 
@@ -33,3 +34,8 @@ alias .....="cd ../../../.."
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+
+# confirm before overwriting something
+alias cp="cp -i"
+alias mv='mv -i'
+alias rm='rm -i'

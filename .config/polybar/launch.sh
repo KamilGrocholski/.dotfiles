@@ -1,6 +1,7 @@
 #!/bin/bash
 
 THEME="mikalsqwe"
+# THEME="ericmurphyxyz"
 
 # Terminate already running bar instances
 killall -q i3bar

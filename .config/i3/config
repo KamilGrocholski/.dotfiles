@@ -17,9 +17,10 @@ font pango:monospace 15px
 
 default_border pixel 2
 default_floating_border pixel 2
-gaps inner 6
-gaps outer 2
+gaps inner 10
+gaps outer -4
 smart_borders on
+smart_gaps on
                           # class                 border  backgr. text    indicator child_border
 for_window [class="^.*"] client.focused          #77dd77 #285577 #ffffff #2e9ef4   #285577
 
@@ -141,13 +142,13 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 
 # Open apps
 exec --no-startup-id i3-msg "workspace $ws1; exec firefox"
-exec --no-startup-id i3-msg "workspace $ws2; exec gnome-terminal"
-# exec --no-startup-id i3-msg 'workspace 3; exec flatpak run com.discordapp.Discord'
+exec --no-startup-id i3-msg "workspace $ws2; exec alacritty"
+exec --no-startup-id i3-msg 'workspace $ws3; exec flatpak run com.discordapp.Discord'
 
 # assign
-assign [class="^Firefox"] $ws1
-assign [class="^Terminal"] $ws2
-assign [class="^Discord"] $ws3
+assign [class="firefox"] $ws1
+assign [class="Alacritty"] $ws2
+assign [class="com.discordapp.Discord"] $ws3
 
 # NOTE: This is some real tom fooliery with my keyboard layout
 #  ZMK will send a shift mod with the items that require a shift key on a
@@ -263,7 +264,7 @@ bindsym $mod+m move workspace to output left
 bindsym $mod+Shift+period exec systemctl suspend
 
 # Display wallpaper
-exec_always feh --bg-fill ~/Desktop/Sfondi/poe-shaper.jpg
+exec_always feh --bg-fill $WALLPAPER 
 
 # Polybar 
 exec_always --no-startup-id sh $HOME/.config/polybar/launch.sh
