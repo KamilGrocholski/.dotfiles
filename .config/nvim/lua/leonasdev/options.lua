@@ -5,9 +5,9 @@ opt.relativenumber = true
 opt.number = true
 
 -- tabs & indentation
-opt.tabstop = 2
-opt.shiftwidth = 2
-opt.softtabstop = 2
+opt.tabstop = 4
+opt.shiftwidth = 4
+opt.softtabstop = 4
 opt.expandtab = true
 opt.autoindent = true
 
@@ -41,18 +41,18 @@ opt.backspace = "indent,eol,start"
 -- allow you to yank from neovim and C-v to anywhere vice versa
 opt.clipboard:prepend({ "unnamed", "unnamedplus" })
 if _G.IS_WSL and vim.fn.executable("win32yank.exe") == 1 then -- you need put win32yank in system32
-  vim.g.clipboard = {
-    name = "win32yank-wsl",
-    copy = {
-      ["+"] = { "win32yank.exe", "-i", "--crlf" },
-      ["*"] = { "win32yank.exe", "-i", "--crlf" },
-    },
-    paste = {
-      ["+"] = { "win32yank.exe", "-o", "--lf" },
-      ["*"] = { "win32yank.exe", "-o", "--lf" },
-    },
-    cache_enabled = true,
-  }
+    vim.g.clipboard = {
+        name = "win32yank-wsl",
+        copy = {
+            ["+"] = { "win32yank.exe", "-i", "--crlf" },
+            ["*"] = { "win32yank.exe", "-i", "--crlf" },
+        },
+        paste = {
+            ["+"] = { "win32yank.exe", "-o", "--lf" },
+            ["*"] = { "win32yank.exe", "-o", "--lf" },
+        },
+        cache_enabled = true,
+    }
 end
 
 -- split windows
@@ -78,47 +78,47 @@ opt.guicursor = "a:block"
 
 -- Add "LiveServer" command to quick execute live-server of npm
 vim.api.nvim_create_user_command("LiveServer", function()
-  if vim.g.liveserver_bufnr ~= nil then
-    return
-  end
-
-  vim.cmd("tabnew | term live-server")
-  vim.g.liveserver_bufnr = vim.api.nvim_get_current_buf()
-  vim.cmd("close")
-
-  local function print_lines()
-    local lines = vim.api.nvim_buf_get_lines(vim.g.liveserver_bufnr, 0, 1, false)
-    local content = table.concat(lines)
-    if content == nil or content == "" then
-      vim.defer_fn(print_lines, 100)
-    else
-      print(content)
-    end
-  end
-
-  print_lines()
-
-  local live_server_lualine = function()
     if vim.g.liveserver_bufnr ~= nil then
-      return [[󱄙]]
+        return
     end
-    return [[]]
-  end
 
-  require("lualine").setup({
-    sections = {
-      lualine_x = { "encoding", "fileformat", "filetype", { live_server_lualine, color = { fg = "#268bd2" } } },
-    },
-  })
+    vim.cmd("tabnew | term live-server")
+    vim.g.liveserver_bufnr = vim.api.nvim_get_current_buf()
+    vim.cmd("close")
+
+    local function print_lines()
+        local lines = vim.api.nvim_buf_get_lines(vim.g.liveserver_bufnr, 0, 1, false)
+        local content = table.concat(lines)
+        if content == nil or content == "" then
+            vim.defer_fn(print_lines, 100)
+        else
+            print(content)
+        end
+    end
+
+    print_lines()
+
+    local live_server_lualine = function()
+        if vim.g.liveserver_bufnr ~= nil then
+            return [[󱄙]]
+        end
+        return [[]]
+    end
+
+    require("lualine").setup({
+        sections = {
+            lualine_x = { "encoding", "fileformat", "filetype", { live_server_lualine, color = { fg = "#268bd2" } } },
+        },
+    })
 end, { desc = "Start live-server in background" })
 
 -- Add "LiveServerStop" command to quick stop live-server of npm
 vim.api.nvim_create_user_command("LiveServerStop", function()
-  if not vim.g.liveserver_bufnr then
-    print("You haven't start Live Server!")
-    return
-  end
+    if not vim.g.liveserver_bufnr then
+        print("You haven't start Live Server!")
+        return
+    end
 
-  vim.cmd("bd! " .. vim.g.liveserver_bufnr)
-  vim.g.liveserver_bufnr = nil
+    vim.cmd("bd! " .. vim.g.liveserver_bufnr)
+    vim.g.liveserver_bufnr = nil
 end, { desc = "Stop live-server" })
