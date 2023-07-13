@@ -93,4 +93,7 @@ return {
     prismals = {
         name = "prisma-language-server",
     },
+    bashls = {
+        name = "bash-language-server",
+    },
 }

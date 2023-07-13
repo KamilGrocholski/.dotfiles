@@ -35,4 +35,12 @@ return {
             }))
         end,
     },
+    shellcheck = {
+        name = "shellcheck",
+        to_register_wrap = function()
+            return require("null-ls").register(require("null-ls").builtins.diagnostics.shellcheck.with({
+                filetypes = { "sh", "zsh" },
+            }))
+        end,
+    },
 }
