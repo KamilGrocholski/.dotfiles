@@ -22,7 +22,7 @@ gaps outer -4
 smart_borders on
 smart_gaps on
                           # class                 border  backgr. text    indicator child_border
-for_window [class="^.*"] client.focused          #77dd77 #285577 #ffffff #2e9ef4   #285577
+client.focused          #77dd77 #949656 #cccbca  #2e9ef4   #40444F
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -148,7 +148,7 @@ exec --no-startup-id i3-msg 'workspace $ws3; exec flatpak run com.discordapp.Dis
 # assign
 assign [class="firefox"] $ws1
 assign [class="Alacritty"] $ws2
-assign [class="Discord"] $ws3
+assign [class="com.discordapp.Discord"] $ws3
 
 # NOTE: This is some real tom fooliery with my keyboard layout
 #  ZMK will send a shift mod with the items that require a shift key on a
@@ -233,7 +233,7 @@ exec --no-startup-id compton
 # finds out, if available)
 bar {
         status_command i3status
-        tray_output primary
+        tray_output none
 }
 
 # ------------------------------------------
