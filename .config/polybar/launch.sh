@@ -4,8 +4,8 @@ THEME="mikalsqwe"
 # THEME="ericmurphyxyz"
 
 # Terminate already running bar instances
-killall -q i3bar
 killall -q polybar
+killall -q i3bar
 
 # Wait until the processes have been shut down
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
