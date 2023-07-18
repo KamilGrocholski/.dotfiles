@@ -21,18 +21,6 @@ return {
         to_register_wrap = function()
             return require("null-ls").register(require("null-ls").builtins.diagnostics.eslint_d.with({
                 filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact" },
-                only_local = "node_modules/.bin",
-                extra_args = {
-                    "--config",
-                    require("util").config_finder({
-                        ".eslintrc.js",
-                        ".eslintrc.cjs",
-                        ".eslintrc.yml",
-                        ".eslintrc.json",
-                        ".eslintrc.yaml",
-                        ".eslint.config.js",
-                    }, default_config_dir),
-                },
             }))
         end,
     },
