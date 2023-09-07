@@ -122,7 +122,7 @@ local builtin = require('telescope.builtin')
 
 vim.keymap.set('n', '<C-p>', find_files_or_git_files, {})
 vim.keymap.set('n', '<leader>ff', find_files, {})
-vim.keymap.set('n', '<leader>/', current_buffer_fuzzy_find, {})
+vim.keymap.set('n', '<leader>/', builtin.current_buffer_fuzzy_find, {})
 vim.keymap.set('n', '<leader>fe', builtin.diagnostics, {})
 vim.keymap.set('n', '<C-f>', live_grep, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})

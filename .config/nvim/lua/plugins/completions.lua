@@ -25,5 +25,7 @@ cmp.setup({
 		{ name = "buffer", keyword_length = 5 },
 	}, {
 		{name = "buffer"}
-	}),
+    }),
 })
+
+vim.opt.pumheight = 10 -- max number of items
