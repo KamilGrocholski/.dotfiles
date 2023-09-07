@@ -1,0 +1,11 @@
+require("plugins.lualine")
+require("plugins.telescope")
+require("plugins.treesitter")
+require("plugins.mason")
+require("plugins.lsp")
+require("plugins.completions")
+require("plugins.harpoon")
+require("plugins.colorizer")
+require("plugins.colorschema")
+require("plugins.null-ls")
+

@@ -21,8 +21,8 @@ keymap.set("n", "<leader>nh", "<cmd>nohl<cr>", { desc = "Clear highlight" })
 
 -- clear highlight of search, messages, floating windows
 keymap.set({ "n", "i" }, "<Esc>", function()
-  vim.cmd([[nohl]])                                 -- clear highlight of search
-  vim.cmd([[stopinsert]])                           -- clear messages (the line below statusline)
+  vim.cmd([[nohl]]) -- clear highlight of search
+  vim.cmd([[stopinsert]]) -- clear messages (the line below statusline)
   for _, win in ipairs(vim.api.nvim_list_wins()) do -- clear all floating windows
     if vim.api.nvim_win_get_config(win).relative == "win" then
       vim.api.nvim_win_close(win, false)
@@ -48,26 +48,22 @@ keymap.set("c", "<C-BS>", "<C-w>")
 keymap.set("i", "<C-H>", "<C-w>") -- using Ctrl+Backspace delete a word. ref:https://www.reddit.com/r/neovim/comments/prp8zw/using_ctrlbackspace_in_neovim/
 keymap.set("c", "<C-H>", "<C-w>") -- using Ctrl+Backspace delete a word (command mode). ref:https://www.reddit.com/r/neovim/comments/prp8zw/using_ctrlbackspace_in_neovim/
 
--- Moving line(s)
-keymap.set("n", "<A-j>", ":m .+1<CR>==")
-keymap.set("n", "<A-k>", ":m .-2<CR>==")
-keymap.set("i", "<A-j>", "<Esc>:m .+1<CR>==gi")
-keymap.set("i", "<A-k>", "<Esc>:m .-2<CR>==gi")
-keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv")
-keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv")
+-- Move line in visual mode
+keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 -- Search and replace in current word (case sensitive)
 keymap.set(
-  "n",
-  "<leader>s",
-  ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>",
-  { desc = "Replace current word (case sensitive)" }
+"n",
+"<leader>s",
+":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>",
+{ desc = "Replace current word (case sensitive)" }
 )
 keymap.set(
-  "v",
-  "<leader>s",
-  ":s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>",
-  { desc = "Replace current word (case sensitive)" }
+"v",
+"<leader>s",
+":s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>",
+{ desc = "Replace current word (case sensitive)" }
 )
 
 -- Add undo break-points
@@ -97,11 +93,11 @@ keymap.set("n", "dd", function()
 end, { expr = true })
 
 -- better indenting
-keymap.set("v", "<", "<gv")
-keymap.set("v", ">", ">gv")
+vim.keymap.set("v", "<", "<gv")
+vim.keymap.set("v", ">", ">gv")
 
 -- Resize window using <ctrl> arrow keys
-keymap.set("n", "<C-Up>", "<cmd>resize +2<cr>", { desc = "Increase window height" })
-keymap.set("n", "<C-Down>", "<cmd>resize -2<cr>", { desc = "Decrease window height" })
-keymap.set("n", "<C-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease window width" })
-keymap.set("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })
+vim.keymap.set("n", "<C-Up>", "<cmd>resize +2<cr>", { desc = "Increase window height" })
+vim.keymap.set("n", "<C-Down>", "<cmd>resize -2<cr>", { desc = "Decrease window height" })
+vim.keymap.set("n", "<C-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease window width" })
+vim.keymap.set("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase window width" })

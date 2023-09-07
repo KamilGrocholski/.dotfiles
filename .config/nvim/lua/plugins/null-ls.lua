@@ -1,16 +1,24 @@
-return {
-  -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua.
-  {
-    "jose-elias-alvarez/null-ls.nvim",
-    config = function(_, opts) -- opts is received from child spec (formatting, linting)
-      local sources = {} -- a list of to_register
-      for _, to_register_wrap in pairs(opts) do
-        local to_register = to_register_wrap()
-        table.insert(sources, to_register)
-      end
-      require("null-ls").setup({
-        sources = sources,
-      })
-    end,
+local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+local null_ls = require("null-ls")
+
+null_ls.setup({
+  sources = {
+    null_ls.builtins.diagnostics.eslint,
+    null_ls.builtins.formatting.prettier,
   },
-}
+  on_attach = function(client, bufnr)
+    if client.supports_method("textDocument/formatting") then
+      vim.api.nvim_clear_autocmds({
+        group = augroup,
+        buffer = bufnr,
+      })
+      vim.api.nvim_create_autocmd("BufWritePre", {
+        group = augroup,
+        buffer = bufnr,
+        callback = function()
+          vim.lsp.buf.format({ bufnr = bufnr })
+        end
+      })
+    end
+  end,
+})
