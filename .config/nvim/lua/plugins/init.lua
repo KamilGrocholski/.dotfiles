@@ -8,4 +8,6 @@ require("plugins.harpoon")
 require("plugins.colorizer")
 require("plugins.colorschema")
 require("plugins.null-ls")
+require("plugins.fugitive")
+require("plugins.autopairs")
 

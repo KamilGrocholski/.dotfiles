@@ -32,6 +32,8 @@ require("lazy").setup({
 
   'nvim-treesitter/nvim-treesitter',
 
+  'windwp/nvim-autopairs',
+
   'jose-elias-alvarez/null-ls.nvim',
   'hrsh7th/nvim-cmp',
   'hrsh7th/cmp-nvim-lsp',
