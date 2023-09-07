@@ -1,6 +1,7 @@
 require("mason").setup({
     ensure_installed = {
         "eslint-lsp",
+        "eslint_d",
         "prettier",
         "typescript-language-server",
     },
