@@ -30,7 +30,12 @@ require("lazy").setup({
   "ThePrimeagen/harpoon",
   "nvim-lua/plenary.nvim",
 
-  'nvim-treesitter/nvim-treesitter',
+  {
+      'nvim-treesitter/nvim-treesitter',
+      dependencies = {
+          "windwp/nvim-ts-autotag",
+      }
+  },
 
   'windwp/nvim-autopairs',
 

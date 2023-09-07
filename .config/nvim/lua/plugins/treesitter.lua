@@ -31,4 +31,7 @@ require'nvim-treesitter.configs'.setup {
 	highlight = {
 		enable = true,
 	},
+    autotag = { -- dependency with 'nvim-ts-autotag'
+        enable = true,
+    },
 }
