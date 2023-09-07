@@ -1,3 +1,4 @@
+require("core.autocmds")
 require("core.plugins")
 require("core.remaps")
 require("core.set")

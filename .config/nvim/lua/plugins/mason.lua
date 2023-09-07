@@ -1,10 +1,4 @@
 require("mason").setup({
-    ensure_installed = {
-        "eslint-lsp",
-        "eslint_d",
-        "prettier",
-        "typescript-language-server",
-    },
 	dependencies = { {"williamboman/mason-lspconfig.nvim"} },
 	providers = {
 		"mason.providers.registry-api", -- default
