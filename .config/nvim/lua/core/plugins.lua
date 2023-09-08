@@ -14,51 +14,61 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 
 require("lazy").setup({
-    { 'rose-pine/neovim',   name = 'rose-pine', lazy = false, priority = 1000 },
+    { "rose-pine/neovim", name = "rose-pine", lazy = false, priority = 1000 },
 
     "folke/which-key.nvim",
     { "folke/neoconf.nvim", cmd = "Neoconf" },
     "folke/neodev.nvim",
 
-    'nvim-tree/nvim-web-devicons',
-    'nvim-lualine/lualine.nvim',
-    {'lewis6991/gitsigns.nvim', event = 'BufEnter'},
-    'tpope/vim-fugitive',
-    'tpope/vim-commentary',
+    "nvim-tree/nvim-web-devicons",
+    "nvim-lualine/lualine.nvim",
+    { "lewis6991/gitsigns.nvim", event = "BufEnter" },
+    "tpope/vim-fugitive",
+    "tpope/vim-commentary",
     "NvChad/nvim-colorizer.lua",
-    {'stevearc/dressing.nvim', event = "BufEnter"},
+    { "stevearc/dressing.nvim", event = "BufEnter" },
 
     "ThePrimeagen/harpoon",
     "nvim-lua/plenary.nvim",
 
     {
-        'nvim-treesitter/nvim-treesitter',
+        "nvim-treesitter/nvim-treesitter",
         dependencies = {
             "windwp/nvim-ts-autotag",
-        }
+        },
     },
 
-    'windwp/nvim-autopairs',
+    "windwp/nvim-autopairs",
 
     "folke/which-key.nvim",
 
-    'nmac427/guess-indent.nvim',
+    "nmac427/guess-indent.nvim",
 
-    'jose-elias-alvarez/null-ls.nvim',
-    'hrsh7th/nvim-cmp',
-    'hrsh7th/cmp-nvim-lsp',
-    'L3MON4D3/LuaSnip',
-    'saadparwaiz1/cmp_luasnip',
+    "jose-elias-alvarez/null-ls.nvim",
+    "hrsh7th/nvim-cmp",
+    "hrsh7th/cmp-nvim-lsp",
+    {
+        "L3MON4D3/LuaSnip",
+        dependencies = {
+            "rafamadriz/friendly-snippets",
+        },
+    },
+    "saadparwaiz1/cmp_luasnip",
     "rafamadriz/friendly-snippets",
     "williamboman/mason.nvim",
-    "neovim/nvim-lspconfig",
+
+    {
+        "neovim/nvim-lspconfig",
+        event = { "BufReadPre", "BufNewFile" },
+    },
+
     "williamboman/mason-lspconfig.nvim",
 
     {
-        'nvim-telescope/telescope.nvim',
-        tag = '0.1.0',
+        "nvim-telescope/telescope.nvim",
+        tag = "0.1.0",
         dependencies = {
-            'nvim-lua/plenary.nvim',
+            "nvim-lua/plenary.nvim",
             {
                 "nvim-telescope/telescope-fzf-native.nvim",
                 lazy = true,
@@ -70,8 +80,16 @@ require("lazy").setup({
             },
             {
                 "ThePrimeagen/harpoon",
-                lazy = true
-            }
-        }
+                lazy = true,
+            },
+            {
+                "debugloop/telescope-undo.nvim",
+                lazy = true,
+            },
+            {
+                "nvim-telescope/telescope-file-browser.nvim",
+                lazy = true,
+            },
+        },
     },
 })

@@ -21,13 +21,13 @@ keymap.set("n", "<leader>nh", "<cmd>nohl<cr>", { desc = "Clear highlight" })
 
 -- clear highlight of search, messages, floating windows
 keymap.set({ "n", "i" }, "<Esc>", function()
-  vim.cmd([[nohl]]) -- clear highlight of search
-  vim.cmd([[stopinsert]]) -- clear messages (the line below statusline)
-  for _, win in ipairs(vim.api.nvim_list_wins()) do -- clear all floating windows
-    if vim.api.nvim_win_get_config(win).relative == "win" then
-      vim.api.nvim_win_close(win, false)
+    vim.cmd([[nohl]]) -- clear highlight of search
+    vim.cmd([[stopinsert]]) -- clear messages (the line below statusline)
+    for _, win in ipairs(vim.api.nvim_list_wins()) do -- clear all floating windows
+        if vim.api.nvim_win_get_config(win).relative == "win" then
+            vim.api.nvim_win_close(win, false)
+        end
     end
-  end
 end, { desc = "Clear highlight of search, messages, floating windows" })
 
 -- Increment/decrement
@@ -54,16 +54,16 @@ keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 -- Search and replace in current word (case sensitive)
 keymap.set(
-"n",
-"<leader>s",
-":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>",
-{ desc = "Replace current word (case sensitive)" }
+    "n",
+    "<leader>s",
+    ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>",
+    { desc = "Replace current word (case sensitive)" }
 )
 keymap.set(
-"v",
-"<leader>s",
-":s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>",
-{ desc = "Replace current word (case sensitive)" }
+    "v",
+    "<leader>s",
+    ":s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>",
+    { desc = "Replace current word (case sensitive)" }
 )
 
 -- Add undo break-points
@@ -76,20 +76,20 @@ keymap.set("i", "<C-i>", "<C-i>")
 
 -- Smart insert in blank line (auto indent)
 keymap.set("n", "i", function()
-  if #vim.fn.getline(".") == 0 then
-    return [["_cc]]
-  else
-    return "i"
-  end
+    if #vim.fn.getline(".") == 0 then
+        return [["_cc]]
+    else
+        return "i"
+    end
 end, { expr = true })
 
 -- Mapping for dd that doesn't yank an empty line into your default register:
 keymap.set("n", "dd", function()
-  if vim.api.nvim_get_current_line():match("^%s*$") then
-    return '"_dd'
-  else
-    return "dd"
-  end
+    if vim.api.nvim_get_current_line():match("^%s*$") then
+        return '"_dd'
+    else
+        return "dd"
+    end
 end, { expr = true })
 
 -- better indenting

@@ -71,9 +71,9 @@ opt.undofile = true
 opt.iskeyword:append("-") -- now 'test-test' is a word
 opt.scrolloff = 8
 opt.path:append({ "**" }) -- Finding files - Search down into subfolders
-opt.updatetime = 100      -- ref: https://www.reddit.com/r/vim/comments/jqogan/how_does_a_lower_updatetime_lead_to_better/
-opt.belloff = "all"       -- Just turn the dang bell off
-opt.signcolumn = "yes"    -- always showing the signcolumn
+opt.updatetime = 100 -- ref: https://www.reddit.com/r/vim/comments/jqogan/how_does_a_lower_updatetime_lead_to_better/
+opt.belloff = "all" -- Just turn the dang bell off
+opt.signcolumn = "yes" -- always showing the signcolumn
 opt.guicursor = "a:block"
 
 -- Add "LiveServer" command to quick execute live-server of npm
