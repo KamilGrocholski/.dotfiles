@@ -1,6 +1,6 @@
 -- theprimeagen setup
 
-vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
+vim.keymap.set("n", "<leader>gs", vim.cmd.Git, { desc = "Git fugivite" })
 
 local fugitive_group = vim.api.nvim_create_augroup("mikalsqwe_fugitive_group", {})
 
@@ -27,5 +27,10 @@ autocmd("BufWinEnter", {
         -- NOTE: It allows me to easily set the branch i am pushing and any tracking
         -- needed if i did not set the branch up correctly
         vim.keymap.set("n", "<leader>t", ":Git push -u origin ", opts)
+
+        -- choose left diff
+        vim.keymap.set("n", "gh", "<cmd>diffget //2<CR>")
+        -- choose right diff
+        vim.keymap.set("n", "gl", "<cmd>diffget //3<CR>")
     end,
 })

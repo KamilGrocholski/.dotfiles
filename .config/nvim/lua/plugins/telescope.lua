@@ -66,9 +66,10 @@ local function file_browser()
 end
 
 local function current_buffer_fuzzy_find()
-    require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
-        previewer = false,
-    }))
+    -- require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
+    --     previewer = false,
+    -- }))
+    require("telescope.builtin").current_buffer_fuzzy_find()
 end
 
 local function lsp_definitions()
@@ -143,14 +144,14 @@ require("telescope").load_extension("undo")
 
 local builtin = require("telescope.builtin")
 
-vim.keymap.set("n", "<C-p>", find_files_or_git_files, { desc = "Find files or git files" })
+vim.keymap.set("n", "<C-p>", find_files_or_git_files)
 vim.keymap.set("n", "<leader>ff", find_files, { desc = "Find files" })
-vim.keymap.set("n", "<leader>/", current_buffer_fuzzy_find, { desc = "Fuzzy find current buffer" })
+vim.keymap.set("n", "<leader>/", current_buffer_fuzzy_find, { desc = "Current buffer fuzzy find" })
 vim.keymap.set("n", "<leader>fe", builtin.diagnostics, { desc = "Diagnostics windows" })
-vim.keymap.set("n", "<C-f>", live_grep, { desc = "Live grep" })
+vim.keymap.set("n", "<C-f>", live_grep)
 vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Help tags" })
-vim.keymap.set("n", "gd", lsp_definitions, { desc = "Go to definitions" })
-vim.keymap.set("n", "gr", lsp_references, { desc = "Go to references" })
-vim.keymap.set("n", "gi", lsp_implementations, { desc = "Go to implementations" })
-vim.keymap.set("n", "<leader>fn", edit_neovim, {})
+vim.keymap.set("n", "gd", lsp_definitions)
+vim.keymap.set("n", "gr", lsp_references)
+vim.keymap.set("n", "gi", lsp_implementations)
+vim.keymap.set("n", "<leader>fn", edit_neovim, { desc = "Edit neovim" })
 vim.keymap.set("n", "<leader>u", "<cmd>Telescope undo<cr>", { desc = "Undo tree" })

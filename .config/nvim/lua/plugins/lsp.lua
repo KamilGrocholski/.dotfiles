@@ -42,8 +42,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
     end,
 })
 
-local lspconfig = require("lspconfig")
-
 require("lspconfig").lua_ls.setup({
     capabilities = capabilities,
     settings = {
@@ -118,5 +116,13 @@ require("lspconfig").html.setup({
 })
 
 require("lspconfig").emmet_ls.setup({
+    capabilities = capabilities,
+})
+
+require("lspconfig").graphql.setup({
+    capabilities = capabilities,
+})
+
+require("lspconfig").svelte.setup({
     capabilities = capabilities,
 })
