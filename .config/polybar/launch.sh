@@ -11,5 +11,5 @@ killall -q i3bar
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 CONFIG_DIR=~/.config/polybar/$THEME/config.ini
-polybar main -c $CONFIG_DIR &
+polybar --reload --quiet top -c $CONFIG_DIR
 echo "Polybar launched..."

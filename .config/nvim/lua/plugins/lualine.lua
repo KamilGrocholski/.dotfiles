@@ -1,8 +1,9 @@
 require("lualine").setup({
     options = {
-        icons_enabled = true,
-        theme = "rose-pine",
+        icons_enabled = false,
         globalstatus = true,
+        section_separators = '',
+        component_separators = ''
     },
     sections = {
         lualine_a = {

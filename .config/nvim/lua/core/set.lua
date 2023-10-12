@@ -29,7 +29,7 @@ opt.inccommand = "split" -- show substitute results in preview window
 
 -- appearance
 opt.termguicolors = true -- true color
-opt.background = "dark"
+-- opt.background = "dark"
 opt.cursorline = true
 -- opt.pumblend = 10 -- transparency for popup-menu
 vim.api.nvim_set_hl(0, "WinSeparator", { bg = "None" }) -- the line background between two windows

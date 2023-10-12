@@ -2,10 +2,10 @@
 # https://github.com/alacritty/alacritty/blob/master/extra/man/alacritty.5.scd#colors
 
 [colors.primary]
-foreground = "#e0def4"
-background = "#191724"
-dim_foreground = "#908caa"
-bright_foreground = "#e0def4"
+foreground = "#c8c5b8"
+background = "#121212"
+dim_foreground = "#222222"
+bright_foreground = "#292929"
 
 [colors.cursor]
 text = "#e0def4"
@@ -45,7 +45,7 @@ background = "#403d52"
 
 [colors.normal]
 black = "#26233a"
-red = "#eb6f92"
+red = "#cb7676"
 green = "#31748f"
 yellow = "#f6c177"
 blue = "#9ccfd8"
@@ -64,14 +64,14 @@ cyan = "#ebbcba"
 white = "#e0def4"
 
 [colors.dim]
-black = "#6e6a86"
+black = "#111111"
 red = "#eb6f92"
-green = "#31748f"
-yellow = "#f6c177"
-blue = "#9ccfd8"
-magenta = "#c4a7e7"
-cyan = "#ebbcba"
-white = "#e0def4"
+green = "#4d9375"
+yellow = "#e6cc77"
+blue = "#6394bf"
+magenta = "#d9739f"
+cyan = "#5eaab5"
+white = "#ffffff"
 
 [env]
 TERM = "xterm-256color"

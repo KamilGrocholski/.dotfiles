@@ -14,11 +14,15 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 
 require("lazy").setup({
-    { "rose-pine/neovim", name = "rose-pine", lazy = false, priority = 1000 },
+    -- { "rose-pine/neovim", name = "rose-pine", lazy = false, priority = 1000 },
+    { "AlexvZyl/nordic.nvim", lazy = false, priority = 1000 },
 
     "folke/which-key.nvim",
     { "folke/neoconf.nvim", cmd = "Neoconf" },
     "folke/neodev.nvim",
+
+    "folke/twilight.nvim",
+    { "folke/zen-mode.nvim" },
 
     "nvim-tree/nvim-web-devicons",
     "nvim-lualine/lualine.nvim",
@@ -28,6 +32,7 @@ require("lazy").setup({
     "NvChad/nvim-colorizer.lua",
     { "stevearc/dressing.nvim", event = "BufEnter" },
 
+    "ThePrimeagen/vim-be-good",
     "ThePrimeagen/harpoon",
     "nvim-lua/plenary.nvim",
 

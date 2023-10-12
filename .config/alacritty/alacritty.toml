@@ -1,8 +1,9 @@
 colors.draw_bold_text_with_bright_colors = true
-import = [ "~/.config/alacritty/rose-pine.toml" ]
+# import = [ "~/.config/alacritty/rose-pine.toml" ]
+import = [ "~/.config/alacritty/vitesse.toml" ]
 
 [window]
-opacity = 0.85
+opacity = 1
 
   [window.padding]
   x = 10
@@ -19,7 +20,7 @@ multiplier = 3
 [font]
 size = 16
 
-  # [font.normal]
+  #[font.normal]
   # family = "JetBrainsMono Nerd Font"
   # style = "Regular"
   #
@@ -45,3 +46,6 @@ program = "/usr/bin/bash"
 key = "Return"
 mods = "Super|Shift"
 action = "SpawnNewInstance"
+
+[env]
+  TERM = "xterm-256color"
