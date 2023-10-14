@@ -1,13 +1,16 @@
 colors.draw_bold_text_with_bright_colors = true
 # import = [ "~/.config/alacritty/rose-pine.toml" ]
-import = [ "~/.config/alacritty/vitesse.toml" ]
+# import = [ "~/.config/alacritty/gruvbox-dark.toml" ]
+ import = [ "~/.config/alacritty/nordic.toml" ]
 
 [window]
 opacity = 1
+dynamic_padding = true
 
   [window.padding]
-  x = 10
-  y = 10
+  x = 0
+  y = 0
+
 
   [window.class]
   instance = "Alacritty"
@@ -20,27 +23,27 @@ multiplier = 3
 [font]
 size = 16
 
-  #[font.normal]
-  # family = "JetBrainsMono Nerd Font"
-  # style = "Regular"
-  #
-  # [font.bold]
-  # family = "JetBrainsMono Nerd Font"
-  # style = "Bold"
-  #
-  # [font.italic]
-  # family = "JetBrainsMono Nerd Font"
-  # style = "Italic"
-  #
-  # [font.bold_italic]
-  # family = "JetBrainsMono Nerd Font"
-  # style = "Bold Italic"
+[font.normal]
+family = "JetBrains Mono"
+style = "Regular"
+
+[font.bold]
+family = "JetBrains Mono"
+style = "Bold"
+
+[font.italic]
+family = "JetBrains Mono"
+style = "Regular"
+
+[font.bold_italic]
+family = "JetBrains Mono"
+style = "Bold"
 
 [selection]
 save_to_clipboard = false
 
 [shell]
-program = "/usr/bin/bash"
+program = "/usr/bin/zsh"
 
 [[keyboard.bindings]]
 key = "Return"
