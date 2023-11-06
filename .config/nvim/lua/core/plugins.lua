@@ -14,8 +14,15 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 
 require("lazy").setup({
-    -- { "rose-pine/neovim", name = "rose-pine", lazy = false, priority = 1000 },
-    { "AlexvZyl/nordic.nvim", lazy = false, priority = 1000 },
+    { "rose-pine/neovim", name = "rose-pine", lazy = false, priority = 1000 },
+    -- { "kdheepak/monochrome.nvim", lazy = false, priority = 1000 },
+    -- { "AlexvZyl/nordic.nvim", lazy = false, priority = 1000 },
+
+    {
+        "barrett-ruth/live-server.nvim",
+        build = "npm i -g live-server",
+        config = true,
+    },
 
     "folke/which-key.nvim",
     { "folke/neoconf.nvim", cmd = "Neoconf" },
@@ -42,6 +49,8 @@ require("lazy").setup({
             "windwp/nvim-ts-autotag",
         },
     },
+
+    "nvim-treesitter/nvim-treesitter-context",
 
     "windwp/nvim-autopairs",
 

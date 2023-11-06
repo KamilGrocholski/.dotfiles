@@ -1,16 +1,9 @@
 require("lualine").setup({
     options = {
-        icons_enabled = false,
+        icons_enabled = true,
         globalstatus = true,
-        section_separators = '',
-        component_separators = ''
-    },
-    sections = {
-        lualine_a = {
-            {
-                "filename",
-                path = 1,
-            },
-        },
+        theme = "rose-pine",
+        -- section_separators = "",
+        -- component_separators = "",
     },
 })

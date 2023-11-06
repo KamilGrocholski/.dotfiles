@@ -1,8 +1,8 @@
 require("mason-lspconfig").setup()
 
-require("lspconfig.ui.windows").default_options.border = "rounded"
-vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
-vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
+require("lspconfig.ui.windows").default_options.border = "single"
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "single" })
+vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "single" })
 
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 for type, icon in pairs(signs) do
@@ -16,7 +16,7 @@ vim.diagnostic.config({
         severity_sort = true,
     },
     float = {
-        border = "rounded",
+        border = "single",
         source = "always", -- Or "if_many"
         prefix = " - ",
     },
@@ -109,6 +109,7 @@ require("lspconfig").prismals.setup({
 
 require("lspconfig").bashls.setup({
     capabilities = capabilities,
+    filetypes = { "sh", "zsh", "bash" },
 })
 
 require("lspconfig").html.setup({
@@ -124,5 +125,9 @@ require("lspconfig").graphql.setup({
 })
 
 require("lspconfig").svelte.setup({
+    capabilities = capabilities,
+})
+
+require("lspconfig").htmx.setup({
     capabilities = capabilities,
 })

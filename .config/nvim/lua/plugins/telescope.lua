@@ -30,14 +30,14 @@ end
 local function find_files_or_git_files()
     if vim.loop.fs_stat(vim.loop.cwd() .. "/.git") then
         local opts = {
-            previewer = enable_previewer,
+            -- previewer = enable_previewer,
             show_untracked = true,
         }
 
         require("telescope.builtin").git_files(opts)
     else
         local opts = {
-            previewer = enable_previewer,
+            -- previewer = enable_previewer,
             no_ignore = true, -- set false to ignore files by .gitignore
             hidden = true, -- set false to ignore dotfiles
         }

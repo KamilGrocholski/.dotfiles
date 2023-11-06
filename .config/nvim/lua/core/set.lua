@@ -76,6 +76,8 @@ opt.belloff = "all" -- Just turn the dang bell off
 opt.signcolumn = "yes" -- always showing the signcolumn
 opt.guicursor = "a:block"
 
+-- opt.cmdheight = 0
+
 -- Add "LiveServer" command to quick execute live-server of npm
 vim.api.nvim_create_user_command("LiveServer", function()
     if vim.g.liveserver_bufnr ~= nil then
